@@ -37,7 +37,7 @@ class Address(object):
             self.address = P2WSHBitcoinAddress.from_scriptPubKey(script_pub_key)
         else:
             raise UnsupportedAddressTypeError()
-        self.value = 0
+        self.value = 0.0
         self.txid = None
         self.vout = None
 
