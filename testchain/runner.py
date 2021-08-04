@@ -34,6 +34,7 @@ class Runner(object):
         self._setup_chain_params()
         self._setup_bitcoind()
         self.proxy = bitcointx.rpc.Proxy(btc_conf_file=self.conf_file)
+        self.proxy.call("createwallet", os.path.join(self.tempdir.name, "testwallet"))
         self.proxy.call("importprivkey", COINBASE_KEY)
 
     def _setup_logger(self):
